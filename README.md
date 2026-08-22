@@ -219,9 +219,5 @@ Lưu ý: những insights chi tiết hơn cần chạy toàn bộ notebook trong
 
 ## Liên hệ
 - Tác giả repo: sonbuwin-beep (GitHub).
-- Nếu bạn muốn, mình có thể:
-  - chỉnh notebook để dùng env vars,
-  - tắt cell renaming (non-destructive),
-  - cập nhật README lên repo và commit trực tiếp.
 
 ---

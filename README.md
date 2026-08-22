@@ -15,7 +15,8 @@ Một notebook phân tích dữ liệu đơn hàng thương mại điện tử (
 - [Schema tóm tắt (các cột chính)](#schema-tóm-tắt-các-cột-chính)  
 - [Truy vấn SQL mẫu](#truy-vấn-sql-mẫu)  
 - [Kết quả sơ bộ / Insights nhanh](#kết-quả-sơ-bộ--insights-nhanh)  
-- [Next steps gợi ý](#next-steps-gợi-ý)  
+- [Các thay đổi đã thực hiện](#các-thay-đổi-đã-thực-hiện)  
+- [Quyết định cần xác nhận](#quyết-định-cần-xác-nhận)  
 - [Đóng góp & License](#đóng-góp--license)  
 - [Liên hệ](#liên-hệ)
 
@@ -97,9 +98,6 @@ DRIVER={ODBC Driver 17 for SQL Server};SERVER=<host>,<port>;DATABASE=<db>;UID=<u
 - Cell dùng `sp_rename` — đổi tên cột trực tiếp trên database:
   - Đây là thao tác destructive (thay đổi schema). Chỉ chạy nếu bạn muốn đổi schema thật.
   - Nếu mục tiêu chỉ hiển thị tên cột tiếng Việt trong notebook, hãy tắt cell này và dùng mapping trong pandas (rename khi đọc).
-- Nếu bạn muốn, mình có thể sửa notebook để:
-  - Lấy credential từ env vars.
-  - Vô hiệu hóa/đổi cell renaming thành non-destructive (chỉ rename trên DataFrame).
 
 ---
 
@@ -202,12 +200,19 @@ Lưu ý: những insights chi tiết hơn cần chạy toàn bộ notebook trong
 
 ---
 
-## Next steps gợi ý
-1. Thay credential bằng env vars; remove hardcoded credentials.
-2. Vô hiệu hóa/đổi cell `sp_rename` thành non-destructive (chỉ rename trong DataFrame).
-3. Tách notebook lớn thành nhiều notebook nhỏ theo mục đích (01_overview, 02_cleaning, 03_sales, 04_customers, 05_products, 06_reporting).
-4. Thêm file LICENSE và CONTRIBUTING.md nếu muốn mở hợp tác.
-5. (Tuỳ chọn) Cung cấp snapshot dữ liệu anonymized (CSV) để người khác có thể chạy offline.
+## Các thay đổi đã thực hiện
+- Đã đọc và phân tích nội dung `Ecommerce_Orders_2026_SQL.ipynb` để rút ra thông tin schema, số lượng dòng/cột, và các bước phân tích có trong notebook.
+- Đã soạn và cập nhật `README.md` với nội dung chi tiết mô tả repo và notebook.
+- Đã xóa các câu mang tính gợi ý/đề nghị khỏi README theo yêu cầu.
+
+---
+
+## Quyết định cần xác nhận
+Vui lòng trả lời (Có / Không) cho từng mục dưới đây để mình thực hiện tiếp nếu bạn đồng ý:
+1. Xóa credentials hardcoded khỏi notebook và thay bằng biến môi trường (env vars).
+2. Vô hiệu hóa cell dùng `sp_rename` và thay bằng thao tác rename non-destructive trên DataFrame.
+3. Thêm file LICENSE (ví dụ: MIT).
+4. Tách notebook hiện tại thành nhiều notebook nhỏ (ví dụ: 01_overview, 02_cleaning, 03_sales, ...).
 
 ---
 
